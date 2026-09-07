@@ -1,30 +1,22 @@
-// Valores iniciais
-let x = 10;
-let y = 3;
+// 1. Atribuição Básica
+let saldo = 100;
 
-// 1. Operações Básicas
-console.log("Adição:", x + y);           // 13
-console.log("Subtração:", x - y);        // 7
-console.log("Multiplicação:", x * y);    // 30
-console.log("Divisão:", x / y);          // 3.3333333333333335
+// 2. Atribuições Matemáticas (Modificando o próprio valor)
+saldo += 50;  // saldo = 100 + 50 (Agora é 150)
+saldo -= 20;  // saldo = 150 - 20 (Agora é 130)
+saldo *= 2;   // saldo = 130 * 2  (Agora é 260)
+saldo /= 10;  // saldo = 260 / 10 (Agora é 26)
+saldo %= 5;   // saldo = 26 % 5   (Agora é 1, pois 26/5 sobra 1)
 
-// 2. Operações Avançadas
-console.log("Resto (Módulo):", x % y);   // 1 (10 dividido por 3 dá 9, sobra 1)
-console.log("Exponenciação:", x ** y);   // 1000 (10 elevado a 3)
+// 3. Atribuições Lógicas (Atualização condicional baseada no estado)
+let apelido = "";
+apelido ||= "Visitante"; 
+// Como "" (string vazia) é avaliado como falso, ele recebe "Visitante".
 
-// 3. Incremento e Decremento (Alteram a própria variável)
-let contador = 5;
+let configuracoesUser = null;
+configuracoesUser ??= { tema: "dark", som: true }; 
+// Como a variável é explicitamente null, ela recebe o objeto padrão.
 
-// Pré-incremento (soma e depois lê a variável)
-console.log("Pré-incremento:", ++contador); // 6
-
-// Pós-incremento (lê a variável atual, e só depois soma)
-console.log("Pós-incremento:", contador++); // 6 (ainda mostra 6...)
-console.log("Valor atualizado:", contador); // 7 (...agora é 7)
-
-// O mesmo se aplica ao decremento (--)
-contador--; 
-console.log("Após decremento:", contador);  // 6
-
-// 4. Concatenação de Strings com '+'
-console.log("Soma vs Concatenação:", 10 + "3"); // "103" (String)
+let isAutenticado = true;
+isAutenticado &&= "Token gerado: 12345"; 
+// Como é true, ele permite a sobrescrita pela nova string.
