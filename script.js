@@ -1,11 +1,14 @@
-const nota = 7.5;
+const idade = 20;
 
-if (nota >= 9) {
-  console.log("Excelente! Conceito A.");
-} else if (nota >= 7) {
-  console.log("Bom! Conceito B.");
-} else if (nota >= 5) {
-  console.log("Regular! Conceito C.");
+// Exemplo usando if/else tradicional para comparação
+let tipoPessoaTradicional;
+if (idade >= 18) {
+  tipoPessoaTradicional = "Adulto";
 } else {
-  console.log("Reprovado.");
+  tipoPessoaTradicional = "Menor de idade";
 }
+
+// Exemplo usando o operador ternário (mesmo resultado, mais enxuto)
+const tipoPessoa = idade >= 18 ? "Adulto" : "Menor de idade";
+
+console.log(tipoPessoa); // "Adulto"
