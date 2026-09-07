@@ -1,19 +1,20 @@
-const cargo = "gerente";
-let bonus;
-
-switch (cargo) {
-  case "estagiario":
-    bonus = 200;
-    break;
-  case "desenvolvedor":
-    bonus = 1000;
-    break;
-  case "gerente":
-    bonus = 2500;
-    break;
-  default:
-    bonus = 500; // Valor padrão se o cargo não estiver na lista
+// ==========================================
+// 1. Loop FOR (Número definido de repetições)
+// ==========================================
+// Estrutura: (inicialização; condição; incremento)
+for (let i = 1; i <= 5; i++) {
+  console.log(`Contagem com FOR: ${i}`);
 }
 
-console.log(`Cargo: ${cargo} | Bônus: R$ ${bonus}`);
-// Saída: Cargo: gerente | Bônus: R$ 2500
+
+// ==========================================
+// 2. Loop WHILE (Repetição baseada em condição)
+// ==========================================
+let energia = 3;
+
+while (energia > 0) {
+  console.log(`Sistema funcionando. Energia restante: ${energia}`);
+  energia--; // Essencial para evitar um loop infinito
+}
+
+console.log("Sistema desligado: energia esgotada.");
