@@ -1,22 +1,28 @@
-// 1. Atribuição Básica
-let saldo = 100;
+// ==========================================
+// 1. O perigo do (==) vs A segurança do (===)
+// ==========================================
+const numero = 10;      // Tipo Number
+const texto = "10";     // Tipo String
 
-// 2. Atribuições Matemáticas (Modificando o próprio valor)
-saldo += 50;  // saldo = 100 + 50 (Agora é 150)
-saldo -= 20;  // saldo = 150 - 20 (Agora é 130)
-saldo *= 2;   // saldo = 130 * 2  (Agora é 260)
-saldo /= 10;  // saldo = 260 / 10 (Agora é 26)
-saldo %= 5;   // saldo = 26 % 5   (Agora é 1, pois 26/5 sobra 1)
+console.log(numero == texto);  // true  (O JS transforma o texto em número por baixo dos panos)
+console.log(numero === texto); // false (Tipos diferentes, falha na hora)
 
-// 3. Atribuições Lógicas (Atualização condicional baseada no estado)
-let apelido = "";
-apelido ||= "Visitante"; 
-// Como "" (string vazia) é avaliado como falso, ele recebe "Visitante".
+console.log(0 == false);       // true  (Zero é considerado "falso" na conversão solta)
+console.log(0 === false);      // false (Number é diferente de Boolean)
 
-let configuracoesUser = null;
-configuracoesUser ??= { tema: "dark", som: true }; 
-// Como a variável é explicitamente null, ela recebe o objeto padrão.
 
-let isAutenticado = true;
-isAutenticado &&= "Token gerado: 12345"; 
-// Como é true, ele permite a sobrescrita pela nova string.
+// ==========================================
+// 2. Comparações Matemáticas
+// ==========================================
+const idade = 18;
+
+console.log(idade > 18);  // false (18 não é MAIOR que 18)
+console.log(idade >= 18); // true  (18 é MAIOR OU IGUAL a 18)
+console.log(idade < 21);  // true
+
+
+// ==========================================
+// 3. Comparações com Strings (Ordem Alfabética/Unicode)
+// ==========================================
+console.log("abacaxi" < "banana"); // true (A letra 'a' vem antes do 'b')
+console.log("Zebra" < "abacaxi");  // true (⚠️ Letras maiúsculas têm numeração menor na tabela Unicode)
