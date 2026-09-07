@@ -1,14 +1,19 @@
-const idade = 20;
+const cargo = "gerente";
+let bonus;
 
-// Exemplo usando if/else tradicional para comparação
-let tipoPessoaTradicional;
-if (idade >= 18) {
-  tipoPessoaTradicional = "Adulto";
-} else {
-  tipoPessoaTradicional = "Menor de idade";
+switch (cargo) {
+  case "estagiario":
+    bonus = 200;
+    break;
+  case "desenvolvedor":
+    bonus = 1000;
+    break;
+  case "gerente":
+    bonus = 2500;
+    break;
+  default:
+    bonus = 500; // Valor padrão se o cargo não estiver na lista
 }
 
-// Exemplo usando o operador ternário (mesmo resultado, mais enxuto)
-const tipoPessoa = idade >= 18 ? "Adulto" : "Menor de idade";
-
-console.log(tipoPessoa); // "Adulto"
+console.log(`Cargo: ${cargo} | Bônus: R$ ${bonus}`);
+// Saída: Cargo: gerente | Bônus: R$ 2500
