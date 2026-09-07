@@ -1,5 +1,4 @@
-var a;
+var a = "Hello World";
 
-a = "Hello World"
-
-console.log(a);
+console.log(b);
+//Usar ponto e virgula sempre no final como boa pratica//
