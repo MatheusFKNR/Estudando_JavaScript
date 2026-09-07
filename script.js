@@ -1,38 +1,33 @@
 // ==========================================
-// 1. Uso em Condições Tradicionais (&& e ||)
+// 1. Manipulação de Strings
 // ==========================================
-const idade = 25;
-const temCarteira = true;
-const isEstudante = false;
+const texto = "  JavaScript Moderno  ";
 
-// AND (&&): Ambas precisam ser verdadeiras
-console.log("Pode dirigir?", idade >= 18 && temCarteira); // true
+console.log(texto.trim());                  // "JavaScript Moderno" (remove espaços)
+console.log(texto.trim().toLowerCase());    // "javascript moderno"
+console.log(texto.includes("Script"));      // true
 
-// OR (||): Apenas uma precisa ser verdadeira
-console.log("Paga meia-entrada?", idade < 18 || isEstudante); // false
-
-
-// ==========================================
-// 2. Inversão com NOT (!)
-// ==========================================
-const bloqueado = false;
-console.log("Acesso liberado?", !bloqueado); // true (inverteu o estado)
-console.log("Forçando booleano:", !!"Texto"); // true (duas exclamações convertem qualquer dado para seu valor booleano real)
+// Template Literals (Interpolação)
+const produto = "Notebook";
+const preco = 3500;
+const mensagem = `O ${produto} custa R$ ${preco},00.`;
+console.log(mensagem); // "O Notebook custa R$ 3500,00."
 
 
 // ==========================================
-// 3. Curto-Circuito (Short-circuit Evaluation)
+// 2. Convertendo Strings em Números
 // ==========================================
+const precoStr = "199.99";
+const idadeInput = "25 anos";
 
-// O operador && para e retorna a primeira coisa FALSA que encontrar.
-const validacao = true && "Tudo certo" && 0 && "Ignorado";
-console.log("Curto-circuito AND:", validacao); // 0 (Parou no 0, pois é falsy)
+// Usando Number() ou o operador unário (+)
+const precoReal = Number(precoStr);     // 199.99 (Number)
+const idadeReal = +idadeInput;          // NaN (pois tem letras no meio)
 
-// O operador || para e retorna a primeira coisa VERDADEIRA que encontrar.
-const usuarioPadrao = "" || null || "Visitante" || "Admin";
-console.log("Curto-circuito OR:", usuarioPadrao); // "Visitante"
+// Usando parseInt e parseFloat (ótimos para CSS ou inputs mistos)
+const larguraStr = "45.7px";
+const larguraInteira = parseInt(larguraStr);    // 45 (ignora o "px")
+const larguraExata = parseFloat(larguraStr);     // 45.7
 
-// O operador ?? ignora null/undefined, mas aceita 0 e strings vazias como valores válidos.
-const limiteZerado = 0;
-const limiteComOR = limiteZerado || 50;      // 50 (Cuidado: o 0 foi descartado como falso)
-const limiteComNullish = limiteZerado ?? 50; // 0  (Correto: 0 é um número válido)
+console.log(typeof precoReal, precoReal);       // "number" 199.99
+console.log(typeof larguraExata, larguraExata); // "number" 45.7
