@@ -1,65 +1,30 @@
-// ==========================================
-// 1. TIPOS PRIMITIVOS (Imutáveis, passados por valor)
-// ==========================================
+// Valores iniciais
+let x = 10;
+let y = 3;
 
-// String: Textos literais
-const texto = "Olá, mundo!"; 
-const templateLiteral = `O texto é: ${texto}`;
+// 1. Operações Básicas
+console.log("Adição:", x + y);           // 13
+console.log("Subtração:", x - y);        // 7
+console.log("Multiplicação:", x * y);    // 30
+console.log("Divisão:", x / y);          // 3.3333333333333335
 
-// Number: Números inteiros, decimais e especiais (Infinity, NaN)
-const inteiro = 42;
-const decimal = 3.14;
-const erroMatematico = NaN; // Not-a-Number (ainda é do tipo number)
+// 2. Operações Avançadas
+console.log("Resto (Módulo):", x % y);   // 1 (10 dividido por 3 dá 9, sobra 1)
+console.log("Exponenciação:", x ** y);   // 1000 (10 elevado a 3)
 
-// Boolean: Verdadeiro ou Falso
-const portaAberta = true;
+// 3. Incremento e Decremento (Alteram a própria variável)
+let contador = 5;
 
-// Undefined: Declarada, mas nunca inicializada
-let semValorDefinido;
+// Pré-incremento (soma e depois lê a variável)
+console.log("Pré-incremento:", ++contador); // 6
 
-// Null: Ausência intencional e explícita de valor
-const vazioIntencional = null;
+// Pós-incremento (lê a variável atual, e só depois soma)
+console.log("Pós-incremento:", contador++); // 6 (ainda mostra 6...)
+console.log("Valor atualizado:", contador); // 7 (...agora é 7)
 
-// Symbol: Identificador único e imutável (garante que nunca haverá colisão de nomes)
-const idUnico = Symbol("chave_secreta");
+// O mesmo se aplica ao decremento (--)
+contador--; 
+console.log("Após decremento:", contador);  // 6
 
-// BigInt: Números inteiros maiores que o limite de segurança numérico do JS (terminam com 'n')
-const numeroGigante = 9007199254740991n; 
-
-
-// ==========================================
-// 2. TIPOS DE REFERÊNCIA (Mutáveis, passados por endereço de memória)
-// ==========================================
-
-// Object: Coleção estruturada de pares chave-valor
-const usuario = {
-  nome: "Ana",
-  idade: 28,
-  isAdmin: false
-};
-
-// Array: Lista indexada de valores (estruturalmente lido como um Objeto)
-const linguagens = ["JavaScript", "TypeScript", "Python"];
-
-// Function: Bloco de código executável (lido como um subtipo de Objeto chamável)
-const multiplicar = function(a, b) {
-  return a * b;
-};
-
-
-// ==========================================
-// 3. INSPECIONANDO OS TIPOS NA PRÁTICA
-// ==========================================
-
-console.table([
-  { Dado: "texto", TipoReal: typeof texto },                         // "string"
-  { Dado: "inteiro", TipoReal: typeof inteiro },                     // "number"
-  { Dado: "portaAberta", TipoReal: typeof portaAberta },             // "boolean"
-  { Dado: "semValorDefinido", TipoReal: typeof semValorDefinido },   // "undefined"
-  { Dado: "vazioIntencional", TipoReal: typeof vazioIntencional },   // "object" ⚠️ (Bug histórico do JS)
-  { Dado: "idUnico", TipoReal: typeof idUnico },                     // "symbol"
-  { Dado: "numeroGigante", TipoReal: typeof numeroGigante },         // "bigint"
-  { Dado: "usuario", TipoReal: typeof usuario },                     // "object"
-  { Dado: "linguagens", TipoReal: typeof linguagens },               // "object" (Arrays são objetos sob o capô)
-  { Dado: "multiplicar", TipoReal: typeof multiplicar }              // "function"
-]);
+// 4. Concatenação de Strings com '+'
+console.log("Soma vs Concatenação:", 10 + "3"); // "103" (String)
