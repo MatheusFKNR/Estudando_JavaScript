@@ -1,39 +1,34 @@
-// ==========================================
-// 1. Declaração de Função Tradicional
-// ==========================================
-// Parâmetros (nome) ficam entre os parênteses
-function darBoasVindas(nome) {
-  return `Olá, ${nome}! Seja bem-vindo(a).`;
+
+var nomes = ["joão", "Maria", "Romário"];
+var notasA = [7.0, 6.5, 9.5];
+var notasB = [8.0, 7.0, 8.5];
+
+function media(n1,n2){
+  return(n1 + n2)/2
 }
 
-// Chamando a função e passando o Argumento ("Ana")
-const mensagem = darBoasVindas("Ana");
-console.log(mensagem); // "Olá, Ana! Seja bem-vindo(a)."
-
-
-// ==========================================
-// 2. Parâmetros com Valor Padrão (Default)
-// ==========================================
-// Se nenhum valor for passado, ele usa o valor após o '='
-function calcularDesconto(preco, desconto = 10) {
-  return preco - (preco * (desconto / 100));
+function passou(media){
+  
+  if (media > 7){
+    return "Aprovado"
+  }else{
+    return "Reprovado"
+  }
+  
 }
 
-console.log(calcularDesconto(100));     // 90 (Usou o desconto padrão de 10%)
-console.log(calcularDesconto(100, 50)); // 50 (Sobrescreveu o desconto para 50%)
+for(var index in nomes){
 
+  let nota1 = notasA[index];
+  let nota2 = notasB[index];
 
-// ==========================================
-// 3. Arrow Function (Sintaxe Moderna - ES6)
-// ==========================================
-// Muito usada para criar funções anônimas ou atribuí-las a constantes
-const multiplicar = (a, b) => {
-  return a * b;
-};
+  let m = media(nota1, nota2);
 
-// Retorno Implícito: Se a função tiver apenas uma linha de código, 
-// você pode omitir as chaves {} e a palavra 'return'
-const somar = (a, b) => a + b;
-
-console.log(multiplicar(4, 5)); // 20
-console.log(somar(10, 15));     // 25
+  console.log(nomes[index] +
+      " - " +
+      notasA[index] +
+      " - " +
+      notasB[index] +
+      " - " +
+      passou(m))
+}
