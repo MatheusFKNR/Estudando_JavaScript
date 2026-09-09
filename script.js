@@ -1,45 +1,39 @@
 // ==========================================
-// 1. Criando e Acessando um Array
+// 1. Declaração de Função Tradicional
 // ==========================================
-const frutas = ["maçã", "banana", "laranja"];
-
-console.log(frutas[0]); // "maçã" (primeiro elemento)
-console.log(frutas[2]); // "laranja" (último elemento)
-console.log(frutas.length); // 3 (quantidade de itens)
-
-
-// ==========================================
-// 2. Principais Métodos de Modificação
-// ==========================================
-
-// Adiciona um item no final do array
-frutas.push("uva"); 
-// ["maçã", "banana", "laranja", "uva"]
-
-// Remove o último item do array
-frutas.pop(); 
-// ["maçã", "banana", "laranja"]
-
-// Adiciona um item no início do array
-frutas.unshift("morango"); 
-// ["morango", "maçã", "banana", "laranja"]
-
-// Remove o primeiro item do array
-frutas.shift(); 
-// ["maçã", "banana", "laranja"]
-
-
-// ==========================================
-// 3. Percorrendo um Array (Iteração)
-// ==========================================
-const numeros = [10, 20, 30, 40];
-
-// Usando o loop for tradicional
-for (let i = 0; i < numeros.length; i++) {
-  console.log(`Índice ${i}: ${numeros[i]}`);
+// Parâmetros (nome) ficam entre os parênteses
+function darBoasVindas(nome) {
+  return `Olá, ${nome}! Seja bem-vindo(a).`;
 }
 
-// Usando o método moderno .forEach()
-numeros.forEach((numero, indice) => {
-  console.log(`Número ${numero} na posição ${indice}`);
-});
+// Chamando a função e passando o Argumento ("Ana")
+const mensagem = darBoasVindas("Ana");
+console.log(mensagem); // "Olá, Ana! Seja bem-vindo(a)."
+
+
+// ==========================================
+// 2. Parâmetros com Valor Padrão (Default)
+// ==========================================
+// Se nenhum valor for passado, ele usa o valor após o '='
+function calcularDesconto(preco, desconto = 10) {
+  return preco - (preco * (desconto / 100));
+}
+
+console.log(calcularDesconto(100));     // 90 (Usou o desconto padrão de 10%)
+console.log(calcularDesconto(100, 50)); // 50 (Sobrescreveu o desconto para 50%)
+
+
+// ==========================================
+// 3. Arrow Function (Sintaxe Moderna - ES6)
+// ==========================================
+// Muito usada para criar funções anônimas ou atribuí-las a constantes
+const multiplicar = (a, b) => {
+  return a * b;
+};
+
+// Retorno Implícito: Se a função tiver apenas uma linha de código, 
+// você pode omitir as chaves {} e a palavra 'return'
+const somar = (a, b) => a + b;
+
+console.log(multiplicar(4, 5)); // 20
+console.log(somar(10, 15));     // 25
