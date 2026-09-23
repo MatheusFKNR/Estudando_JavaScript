@@ -1,12 +1,15 @@
-// 1. Data e hora atuais
-const agora = new Date();
+// 1. Informações da tela/janela
+console.log(`LARGURA: ${window.innerWidth}px`);
+console.log(`ALTURA: ${window.innerHeight}px`);
 
-// 2. A partir de uma string no formato ISO (YYYY-MM-DD)
-const dataString = new Date("2026-09-23T10:30:00");
+// 2. Manipulação de URL/Navegação
+console.log(window.location.href); // URL atual
+// window.location.href = "https://exemplo.com"; // Redireciona a página
 
-// 3. Passando parâmetros: (ano, mês, dia, hora, minuto, segundo)
-// ATENÇÃO: O mês começa em 0 (0 = Janeiro, 8 = Setembro, 11 = Dezembro)
-const dataEspecifica = new Date(2026, 8, 23, 14, 0, 0);
+// 3. APIs nativas e Temporizadores (o prefixo 'window.' pode ser omitido)
+window.setTimeout(() => {
+  console.log("Executado após 2 segundos");
+}, 2000);
 
-// 4. A partir de um Timestamp (milissegundos)
-const dataTimestamp = new Date(1700000000000);
+// 4. Armazenamento local no navegador
+window.localStorage.setItem("tema", "escuro");
