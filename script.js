@@ -1,15 +1,17 @@
-// 1. Informações da tela/janela
-console.log(`LARGURA: ${window.innerWidth}px`);
-console.log(`ALTURA: ${window.innerHeight}px`);
+// 1. Seleção de elementos na página
+const titulo = document.querySelector("#titulo-principal");
+const botoes = document.querySelectorAll(".btn-acao");
 
-// 2. Manipulação de URL/Navegação
-console.log(window.location.href); // URL atual
-// window.location.href = "https://exemplo.com"; // Redireciona a página
+// 2. Alteração de conteúdo e estilos CSS
+titulo.textContent = "Novo Título via JS";
+titulo.style.color = "green";
 
-// 3. APIs nativas e Temporizadores (o prefixo 'window.' pode ser omitido)
-window.setTimeout(() => {
-  console.log("Executado após 2 segundos");
-}, 2000);
+// 3. Criando e inserindo novos elementos no HTML
+const novoParagrafo = document.createElement("p");
+novoParagrafo.textContent = "Parágrafo criado dinamicamente.";
+document.body.appendChild(novoParagrafo);
 
-// 4. Armazenamento local no navegador
-window.localStorage.setItem("tema", "escuro");
+// 4. Escutando eventos da página
+document.addEventListener("click", (event) => {
+  console.log("Elemento clicado:", event.target);
+});
