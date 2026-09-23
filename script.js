@@ -1,15 +1,12 @@
-// Criando um objeto
-const usuario = {
-  nome: "Carlos",
-  idade: 25,
-  "tipo-de-conta": "Premium" // Chaves com hífen ou espaços exigem aspas
-};
+// 1. Data e hora atuais
+const agora = new Date();
 
-// Acessando propriedades
-console.log(usuario.nome);               // "Carlos" (Notação de ponto)
-console.log(usuario["idade"]);            // 25 (Notação de colchetes)
-console.log(usuario["tipo-de-conta"]);   // "Premium" (Obrigatório usar colchetes)
+// 2. A partir de uma string no formato ISO (YYYY-MM-DD)
+const dataString = new Date("2026-09-23T10:30:00");
 
-// Acesso dinâmico via variável
-const propriedadeDesejada = "nome";
-console.log(usuario[propriedadeDesejada]); // "Carlos"
+// 3. Passando parâmetros: (ano, mês, dia, hora, minuto, segundo)
+// ATENÇÃO: O mês começa em 0 (0 = Janeiro, 8 = Setembro, 11 = Dezembro)
+const dataEspecifica = new Date(2026, 8, 23, 14, 0, 0);
+
+// 4. A partir de um Timestamp (milissegundos)
+const dataTimestamp = new Date(1700000000000);
